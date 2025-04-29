@@ -8,10 +8,14 @@ if [ "$#" -ne 1 ]; then
 fi
 
 ADDRESS="$1"
+thispath="$(dirname -- "${BASH_SOURCE[0]}")"
+thispath="$(cd -- "$thispath" && pwd)"
 
-tmpfile=$(mktemp /tmp/st_cmd_XXXXXX)
-trap "rm -f \"$tmpfile\"" EXIT
+tmpdir=$(mktemp -d /tmp/ioc_XXXXXXXXXX)
+cp $thispath/* $tmpdir/
+trap "rm -rf \"$tmpdir\"; cd $thispath" EXIT
 
-ADDRESS="$ADDRESS" envsubst < st.cmd > "$tmpfile"
-iocsh "$tmpfile"
+ADDRESS="$ADDRESS" envsubst < st.cmd > "$tmpdir/st.cmd"
+cd $tmpdir
+iocsh "./st.cmd"
 

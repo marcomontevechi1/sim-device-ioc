@@ -1,0 +1,3 @@
+Terminator = ':';
+
+getParam { out $1; }
