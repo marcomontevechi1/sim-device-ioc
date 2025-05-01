@@ -1,7 +1,7 @@
 channel_alias: https://artifactory.esss.lu.se/artifactory/api/conda
 channels:
   - conda-forge
-  - conda-e3-virtual
+  - https://artifactory.esss.lu.se/artifactory/api/conda/conda-e3-virtual
 dependencies:
   - stream
   - python=3.11
