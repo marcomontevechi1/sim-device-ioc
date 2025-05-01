@@ -1,0 +1,12 @@
+record(stringin, "$(NAME)-R") {
+    field(DESC, "String read $(NAME)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+    field(INP,  "@default.proto getStrParam($(NAME)) $(PORT)")
+}
+
+record(stringout, "$(NAME)-S") {
+    field(DESC, "String write $(NAME)")
+    field(DTYP, "stream")
+    field(OUT,  "@default.proto setStrParam($(NAME)) $(PORT)")
+}

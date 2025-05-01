@@ -1,3 +1,13 @@
-Terminator = ':';
+Terminator = LF;
 
-getParam { out $1; }
+getBoolParam { out "R:\$1:"; in "R:\$1:%{False|True}"; }
+
+setBoolParam { out "W:\$1:%s"; }
+
+getAnalogParam { out "R:\$1:"; in "R:\$1:%f"; }
+
+setAnalogParam { out "W:\$1:%f"; }
+
+getStrParam { out "R:\$1:"; in "R:\$1:%s"; }
+
+setStrParam { out "W:\$1:%s"; }

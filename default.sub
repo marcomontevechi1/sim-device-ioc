@@ -1,0 +1,15 @@
+file bool.template {
+    pattern {NAME}
+    {"A"}
+}
+
+file analog.template {
+    pattern {NAME}
+    {"B"}
+    {"C"}
+}
+
+file string.template {
+    pattern {NAME}
+    {"D"}
+}

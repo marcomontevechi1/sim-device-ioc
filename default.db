@@ -1,6 +1,0 @@
-record(bi, "A-R") {
-    field(DESC, "Boolean")
-    field(DTYP, "stream")
-    field(SCAN, "1 second")
-    field(INP,  "@default.proto getParam(\"A\") $(PORT)")
-}

@@ -1,0 +1,16 @@
+record(bi, "$(NAME)-R") {
+    field(DESC, "Boolean read $(NAME)")
+    field(DTYP, "stream")
+    field(ZNAM, "False")
+    field(ONAM, "True")
+    field(SCAN, "1 second")
+    field(INP,  "@default.proto getBoolParam($(NAME)) $(PORT)")
+}
+
+record(bo, "$(NAME)-S") {
+    field(DESC, "Boolean write $(NAME)")
+    field(DTYP, "stream")
+    field(ZNAM, "False")
+    field(ONAM, "True")
+    field(OUT,  "@default.proto setBoolParam($(NAME)) $(PORT)")
+}

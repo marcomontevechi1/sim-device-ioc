@@ -1,0 +1,12 @@
+record(ai, "$(NAME)-R") {
+    field(DESC, "Analog read $(NAME)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+    field(INP,  "@default.proto getAnalogParam($(NAME)) $(PORT)")
+}
+
+record(ao, "$(NAME)-S") {
+    field(DESC, "Analog write $(NAME)")
+    field(DTYP, "stream")
+    field(OUT,  "@default.proto setAnalogParam($(NAME)) $(PORT)")
+}
