@@ -1,0 +1,14 @@
+services:
+  ioc:
+    image: ghcr.io/marcomontevechi1/sim-device-ioc
+    stdin_open: true
+    tty: true
+    environment:
+      DEVICE_ADDRESS: ${DEVICE_ADDRESS}
+      DEVICE_PORT: ${DEVICE_PORT}
+    volumes:
+      - ./st.cmd:/opt/ioc/st.cmd
+    network_mode: "host"
+    build:
+      context: ./
+      dockerfile: Dockerfile
